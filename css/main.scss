@@ -135,6 +135,12 @@ body {
                     border-radius: 15px;
                 }
             }
+
+            &.disable {
+                border: 2px solid #4cd87f;
+                pointer-events: none;
+                cursor: not-allowed;
+            }
         }
     }
 }
