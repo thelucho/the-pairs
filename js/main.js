@@ -2,7 +2,7 @@
 const grid = document.querySelector('.grid');
 const btnPlay = document.querySelector('.btn-play');
 const btnReset = document.querySelector('.btn-reset');
-const copy = document.querySelector('.copy'); // Provisorio
+const btnLamp = document.querySelector('.btn-lamp');
 
 const frames = ['Angular', 'React', 'Vue', 'Svelte', 'Ember', 'Backbone'];
 let cardsSelected = [];
@@ -13,7 +13,7 @@ let pairsFound = 0;
 grid.addEventListener('click', tapCard);
 btnPlay.addEventListener('click', play);
 btnReset.addEventListener('click', resetGame);
-
+btnLamp.addEventListener('click', turnOnTheLight);
 
 
 //---------------------------------
@@ -70,7 +70,8 @@ function tapCard(e) {
 
 function createCards(array) {
     for (let i = 0; i < array.length; i++) {
-        grid.innerHTML += `
+        setTimeout(function () {
+            grid.innerHTML += `
             <div class="box flipper" id="${array[i]}">
                 <div class="front">
                     <span class="name"></span>
@@ -80,20 +81,29 @@ function createCards(array) {
                 </div>
             </div>
         `;
-    }
-
-    // FOR Provisorio para ver resultados en footer
-    for (let i = 0; i < array.length; i++) {
-        copy.innerHTML += array[i].toString();
+        }, i * 80)
     }
 }
 
 function showAlertWin(count) {
     if (count === 6) {
         setTimeout(function () {
-            copy.innerHTML = "GANOOO"; ////// CREAR y ABRIR POPUP WIN
-        }, 1000)
+
+            Swal.fire({
+                title: 'Great!',
+                text: 'You have found all pairs.',
+                icon: 'success',
+                confirmButtonText: 'Close'
+            })
+
+        }, 500)
     }
+}
+
+function turnOnTheLight() {
+    const body = document.querySelector('body');
+
+    body.classList.toggle("on");
 }
 
 
@@ -116,7 +126,6 @@ function checkPairs(array) {
 
 function resetGame() {
     grid.innerHTML = "";
-    copy.innerHTML = ""; // Provisorio
     pairsFound = 0;
     btnReset.disabled = true;
     btnPlay.disabled = false;
