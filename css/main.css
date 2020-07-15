@@ -36,6 +36,12 @@ body.on .navbar .right .btn-lamp i.ri-moon-fill {
   display: block;
 }
 
+body.on .grid .box {
+  background-color: #fffdeb;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+}
+
 body .overlay {
   position: absolute;
   top: 0;
@@ -179,8 +185,8 @@ body .grid .box {
       -ms-flex-pack: center;
           justify-content: center;
   opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
 }
 
 body .grid .box.flipper {
