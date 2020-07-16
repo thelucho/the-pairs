@@ -4,7 +4,7 @@ body {
 }
 
 body h1, body h2, body h3, body h4, body h5, body h6 {
-  color: #d6d6d6;
+  color: #908fb5;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
@@ -95,7 +95,8 @@ body .navbar .left {
 }
 
 body .navbar .left h1 {
-  font-size: 18px;
+  font-size: 23px;
+  font-family: 'Fredoka One', cursive;
 }
 
 body .navbar .center {
@@ -162,11 +163,13 @@ body footer {
 }
 
 body footer p {
+  font-size: 21px;
   margin-bottom: 0px;
+  color: #fff;
 }
 
 body .grid {
-  height: 90vh;
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

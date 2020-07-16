@@ -4,7 +4,7 @@ body {
     overflow: hidden;
 
     h1, h2, h3, h4, h5, h6 {
-        color: rgb(214, 214, 214);
+        color: #908fb5;
         transition: all 1s ease-in-out;
     }
 
@@ -86,7 +86,8 @@ body {
             justify-content: flex-start;
 
             h1 {
-                font-size: 18px;
+                font-size: 23px;
+                font-family: 'Fredoka One', cursive;
             }
         }
 
@@ -141,13 +142,15 @@ body {
         padding: 20px 35px;
 
         p {
+            font-size: 21px;
             margin-bottom: 0px;
+            color: #fff;
         }
     }
 
 
     .grid {
-        height: 90vh;
+        height: 80vh;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
