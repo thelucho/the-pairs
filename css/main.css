@@ -22,8 +22,14 @@ body.on .overlay {
 }
 
 body.on .navbar .right .btn-lamp:hover {
-  -webkit-animation: none;
-          animation: none;
+  -webkit-animation-name: move;
+          animation-name: move;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 body.on .navbar .right .btn-lamp i.ri-sun-fill {
@@ -114,6 +120,8 @@ body .navbar .right .btn-lamp {
   border: none;
   font-size: 28px;
   outline: none;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 body .navbar .right .btn-lamp:hover {
@@ -125,6 +133,8 @@ body .navbar .right .btn-lamp:hover {
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 body .navbar .right .btn-lamp i.ri-sun-fill {
@@ -268,6 +278,36 @@ body .grid .box.disable {
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 /*# sourceMappingURL=main.css.map */

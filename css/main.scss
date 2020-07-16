@@ -23,7 +23,10 @@ body {
             .right {
                 .btn-lamp {
                     &:hover {
-                        animation: none;
+                        animation-name: move;
+                        animation-duration: 1000ms;
+                        animation-iteration-count: infinite;
+                        animation-timing-function: linear;
                     }
 
                     i {
@@ -104,12 +107,14 @@ body {
                 border: none;
                 font-size: 28px;
                 outline: none;
+                transition: all .5s ease-in-out;
 
                 &:hover {
                     animation-name: spin;
                     animation-duration: 4000ms;
                     animation-iteration-count: infinite;
                     animation-timing-function: linear;
+                    transition: all .5s ease-in-out;
                 }
 
                 i {
@@ -237,5 +242,17 @@ body {
     }
     to {
         transform:rotate(360deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform:rotate(0deg);
+    }
+    50% {
+        transform:rotate(90deg);
+    }
+    100% {
+        transform:rotate(0deg);
     }
 }
