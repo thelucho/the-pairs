@@ -4,19 +4,31 @@ body {
     overflow: hidden;
 
     h1, h2, h3, h4, h5, h6 {
-        color: #908fb5;
+        color: #ffc521;
+        transition: all 1s ease-in-out;
+    }
+
+    p {
+        color: #fff;
         transition: all 1s ease-in-out;
     }
 
     &.on {
         h1, h2, h3, h4, h5, h6 {
-            color: #383838;
+            color: #5e6696;
             transition: all 1s ease-in-out;
         }
+
+        p {
+            color: #5e6696;
+            transition: all 1s ease-in-out;
+        }
+
         .overlay {
+            z-index: -1;
             width: 400vw;
             height: 400vh;
-            background-color: #e2e6dd;
+            background-color: #F6E8D9;
         }
 
         .navbar {
@@ -36,7 +48,7 @@ body {
                         }
 
                         &.ri-moon-fill {
-                            color: #767ee0;
+                            color: #5e6696;
                             display: block;
                         }
                     }
@@ -46,8 +58,15 @@ body {
 
         .grid {
             .box {
-                background-color: #fffdeb;
+                background-color: #fffaf0;
                 transition: all 3s ease-in-out;
+            }
+        }
+
+        footer {
+            p {
+                color: #26283f;
+                transition: all 1s ease-in-out;
             }
         }
     }
@@ -62,9 +81,6 @@ body {
         transform: translate(50%, -50%);
         transition: all 1s ease-in-out;
     }
-
-
-    
 
     .navbar {
         background-color: transparent !important;
@@ -120,11 +136,11 @@ body {
 
                 i {
                     &.ri-sun-fill {
-                        color: #e4c800;
+                        color: #ffc521;
                     }
 
                     &.ri-moon-fill {
-                        color: #767ee0;
+                        color: #5e6696;
                         display: none;
                     }
                 }
@@ -134,7 +150,6 @@ body {
     }
 
     footer {
-        background-color: #383759 !important;
         height: 10vh;
         display: flex;
         justify-content: center;
@@ -145,6 +160,7 @@ body {
             font-size: 21px;
             margin-bottom: 0px;
             color: #fff;
+            transition: all 1s ease-in-out;
         }
     }
 
@@ -230,9 +246,16 @@ body {
             }
 
             &.disable {
-                border: 2px solid #4cd87f;
+                border: 2px solid #4d7d5e;
+                box-shadow: 0px 0px 21px 4px rgba(76, 216, 127, 0.64);
                 pointer-events: none;
                 cursor: not-allowed;
+
+                .back {
+                    filter: blur(3px) grayscale(1);
+                    opacity: 0.6;
+                    transition: all 1s ease-in-out;
+                }
             }
         }
     }

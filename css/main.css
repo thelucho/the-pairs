@@ -4,21 +4,34 @@ body {
 }
 
 body h1, body h2, body h3, body h4, body h5, body h6 {
-  color: #908fb5;
+  color: #ffc521;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+body p {
+  color: #fff;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
 body.on h1, body.on h2, body.on h3, body.on h4, body.on h5, body.on h6 {
-  color: #383838;
+  color: #5e6696;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+body.on p {
+  color: #5e6696;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
 body.on .overlay {
+  z-index: -1;
   width: 400vw;
   height: 400vh;
-  background-color: #e2e6dd;
+  background-color: #F6E8D9;
 }
 
 body.on .navbar .right .btn-lamp:hover {
@@ -38,14 +51,20 @@ body.on .navbar .right .btn-lamp i.ri-sun-fill {
 }
 
 body.on .navbar .right .btn-lamp i.ri-moon-fill {
-  color: #767ee0;
+  color: #5e6696;
   display: block;
 }
 
 body.on .grid .box {
-  background-color: #fffdeb;
+  background-color: #fffaf0;
   -webkit-transition: all 3s ease-in-out;
   transition: all 3s ease-in-out;
+}
+
+body.on footer p {
+  color: #26283f;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 body .overlay {
@@ -139,16 +158,15 @@ body .navbar .right .btn-lamp:hover {
 }
 
 body .navbar .right .btn-lamp i.ri-sun-fill {
-  color: #e4c800;
+  color: #ffc521;
 }
 
 body .navbar .right .btn-lamp i.ri-moon-fill {
-  color: #767ee0;
+  color: #5e6696;
   display: none;
 }
 
 body footer {
-  background-color: #383759 !important;
   height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -166,6 +184,8 @@ body footer p {
   font-size: 21px;
   margin-bottom: 0px;
   color: #fff;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 body .grid {
@@ -257,9 +277,19 @@ body .grid .box.flipper .back {
 }
 
 body .grid .box.disable {
-  border: 2px solid #4cd87f;
+  border: 2px solid #4d7d5e;
+  -webkit-box-shadow: 0px 0px 21px 4px rgba(76, 216, 127, 0.64);
+          box-shadow: 0px 0px 21px 4px rgba(76, 216, 127, 0.64);
   pointer-events: none;
   cursor: not-allowed;
+}
+
+body .grid .box.disable .back {
+  -webkit-filter: blur(3px) grayscale(1);
+          filter: blur(3px) grayscale(1);
+  opacity: 0.6;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 @-webkit-keyframes spin {

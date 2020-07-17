@@ -56,6 +56,7 @@ function tapCard(e) {
         });
 
         pairsFound++;
+        playSound('check');
         console.log('Pares encontrados: ' + pairsFound);
 
         cardsSelected = [];
@@ -103,6 +104,8 @@ function showAlertGameOver(score) {
     if (score === 0) {
         setTimeout(function () {
 
+            playSound('lost');
+
             Swal.fire({
                 title: 'Game Over!',
                 text: 'You lost the game.',
@@ -123,6 +126,8 @@ function showAlertWin(count) {
     if (count === 6) {
         setTimeout(function () {
 
+            playSound('win');
+
             Swal.fire({
                 title: 'Great!',
                 text: 'You have found all pairs.',
@@ -139,6 +144,24 @@ function turnOnTheLight() {
     body.classList.toggle("on");
 }
 
+function playSound(sound) {
+    var url = "";
+    switch (sound) {
+        case 'cards':
+            url = "mp3/cards.mp3";
+            break;
+        case 'check':
+            url = "mp3/check.mp3";
+            break;
+        case 'lost':
+            url = "mp3/lost.mp3";
+            break;
+        default:
+            url = "mp3/win.mp3";
+    }
+
+    new Audio(url).play();
+}
 
 //---------------------------------
 // GAME FUNCTIONS
@@ -187,6 +210,7 @@ function play() {
     cards = sortPairs(cards);
     createCards(cards);
     printScore();
+    playSound('cards');
     cards = [];
 
     btnPlay.disabled = true;
