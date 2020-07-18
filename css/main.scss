@@ -1,3 +1,5 @@
+// Breakpoints
+
 
 body {
     background-color: #26283f;
@@ -8,12 +10,21 @@ body {
         transition: all 1s ease-in-out;
     }
 
+    h1 {
+        @media (max-width: 575px) {
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+    }
+
     p {
         color: #fff;
         transition: all 1s ease-in-out;
     }
 
     &.on {
+        overflow: hidden;
+
         h1, h2, h3, h4, h5, h6 {
             color: #5e6696;
             transition: all 1s ease-in-out;
@@ -73,10 +84,10 @@ body {
 
     .overlay {
         position: absolute;
-        top: 0;
-        right: 0;
-        width: 150px;
-        height: 150px;
+        top: 25px;
+        right: 25px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         transform: translate(50%, -50%);
         transition: all 1s ease-in-out;
@@ -90,16 +101,34 @@ body {
         align-items: center;
         padding: 20px 35px;
 
+        @media (max-width: 991px) {
+            padding: 15px 15px;
+        }
+
+        @media (max-width: 575px) {
+            padding: 10px 15px;
+            height: 16vh;
+        }
+
         .left, 
         .center,
         .right {
             width: 300px;
             display: flex;
             align-items: center;
+
+            @media (max-width: 991px) {
+                width: 33.33%;
+            }
         }
 
         .left {
             justify-content: flex-start;
+
+            @media (max-width: 575px) {
+                order: 1;
+                width: 80%;
+            }
 
             h1 {
                 font-size: 23px;
@@ -110,14 +139,31 @@ body {
         .center {
             justify-content: center;
 
+            @media (max-width: 575px) {
+                order: 3;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
             button {
                 padding: .25rem 1.5rem;
                 margin: 0 5px;
+
+                @media (max-width: 575px) {
+                    width: 49%;
+                    margin: 0 0;
+                }
             }
         }
 
         .right {
             justify-content: flex-end;
+
+            @media (max-width: 575px) {
+                order: 2;
+                width: 20%;
+            }
 
             .btn-lamp {
                 background-color: transparent;
@@ -125,6 +171,10 @@ body {
                 font-size: 28px;
                 outline: none;
                 transition: all .5s ease-in-out;
+
+                @media (max-width: 575px) {
+                    font-size: 23px;
+                }
 
                 &:hover {
                     animation-name: spin;
@@ -156,11 +206,20 @@ body {
         align-items: center;
         padding: 20px 35px;
 
+        @media (max-width: 575px) {
+            height: 7vh;
+            padding: 0px 0px;
+        }
+
         p {
             font-size: 21px;
             margin-bottom: 0px;
             color: #fff;
             transition: all 1s ease-in-out;
+
+            @media (max-width: 575px) {
+                font-size: 17px;
+            }
         }
     }
 
@@ -174,6 +233,19 @@ body {
         color: #fff;
         padding: 50px 200px;
 
+        @media (max-width: 1199px) {
+            padding: 50px 70px;
+        }
+
+        @media (max-width: 991px) {
+            padding: 20px 0px 0;
+        }
+
+        @media (max-width: 575px) {
+            height: 77vh;
+        }
+
+
         .box {
             width: 22%;
             height: 29%;
@@ -185,6 +257,11 @@ body {
             //align-items: center;
             opacity: 0;
             transition: all 3s ease-in-out;
+
+            @media (max-width: 575px) {
+                width: 29%;
+                height: 23%;
+            }
 
             &.flipper{
                 -webkit-transition: 0.6s;
@@ -242,6 +319,10 @@ body {
                     width: 100%;
                     height: 100%;
                     border-radius: 15px;
+
+                    @media (max-width: 991px) {
+                        background-size: 100px !important;
+                    }
                 }
             }
 
